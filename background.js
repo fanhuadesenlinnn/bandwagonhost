@@ -8,6 +8,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         .catch(error => {
           sendResponse({success: false, error: error.toString()});
         });
-      return true;  // 表示将异步发送响应
+      return true;
     }
   });
