@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "搬瓦工流量监控",
+  "version": "1.0",
+  "description": "实时监控搬瓦工服务器剩余流量",
+  "permissions": [
+    "storage", 
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://api.64clouds.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
