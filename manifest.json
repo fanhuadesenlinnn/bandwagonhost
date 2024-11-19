@@ -4,13 +4,16 @@
   "version": "1.1",
   "description": "多服务器流量实时监控",
   "permissions": [
-    "storage", 
-    "activeTab"
+      "storage",
+      "activeTab"
   ],
   "host_permissions": [
-    "*://api.64clouds.com/*"
+      "*://api.64clouds.com/*"
   ],
   "action": {
-    "default_popup": "popup.html"
+      "default_popup": "popup.html"
+  },
+  "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self';"
   }
 }

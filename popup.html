@@ -1,94 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>服务器流量监控</title>
-  <style>
-    body {
-      width: 400px;
-      max-height: 200pt;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      margin: 0;
-      padding: 15px;
-      background-color: #f4f4f4;
-      overflow-y: auto;
-    }
-    .container {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 15px;
-    }
-    .server-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-      border-bottom: 1px solid #eee;
-    }
-    .server-details {
-      flex-grow: 1;
-      margin-right: 10px;
-    }
-    .btn {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-right: 5px;
-    }
-    .btn-delete {
-      background-color: #f44336;
-    }
-    .btn-add {
-      width: 100%;
-      margin-top: 10px;
-    }
-    #add-server-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-content {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      width: 300px;
-    }
-    input {
-      width: 100%;
-      padding: 8px;
-      margin: 5px 0;
-      box-sizing: border-box;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>服务器流量监控</title>
+    <style>
+        body {
+            width: 400px;
+            height: 200pt;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: #f4f4f4;
+            overflow-y: auto;
+            margin: 0; /* 移除默认的body margin */
+            padding: 0; /* 移除默认的body padding */
+            border-radius: 10px; /* 将整个页面设置为10px圆角 */
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px;
+        }
+        .server-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .server-details {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .btn-delete {
+            background-color: #f44336;
+        }
+        .btn-add {
+            width: 100%;
+            margin-top: 10px;
+        }
+        #add-server-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-  <div class="container" id="servers-container">
-    <div id="servers-list"></div>
-    <button class="btn btn-add" id="add-server-btn">+ 添加服务器</button>
-  </div>
-
-  <div id="add-server-modal">
-    <div class="modal-content">
-      <h3>添加服务器</h3>
-      <input type="text" id="server-name" placeholder="服务器名称">
-      <input type="text" id="veid" placeholder="VEID">
-      <input type="text" id="api-key" placeholder="API Key">
-      <button class="btn" id="save-server-btn">保存</button>
-      <button class="btn btn-delete" id="cancel-server-btn">取消</button>
+    <div class="container" id="servers-container">
+        <div id="servers-list"></div>
+        <button class="btn btn-add" id="add-server-btn">+ 添加服务器</button>
     </div>
-  </div>
 
-  <script src="popup.js"></script>
+    <div id="add-server-modal">
+        <div class="modal-content">
+            <h3>添加服务器</h3>
+            <input type="text" id="server-name" placeholder="服务器名称">
+            <input type="text" id="veid" placeholder="VEID">
+            <input type="text" id="api-key" placeholder="API Key">
+            <button class="btn" id="save-server-btn">保存</button>
+            <button class="btn btn-delete" id="cancel-server-btn">取消</button>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
 </body>
 </html>
