@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
               serverItem.innerHTML = `
                   <div class="server-details">
                       <strong>${server.name}</strong><br>
-                      IP: ${data.ip}<br>
+                      IP: ${data.ip_addresses}<br>
                       总流量: ${totalTraffic} GB<br>
                       剩余流量: ${remainingTraffic} GB<br>
                       重置日期: ${resetDate}
