@@ -34,7 +34,14 @@ document.addEventListener('DOMContentLoaded', function () {
           .then(data => {
               const remainingTraffic = ((data.plan_monthly_data - data.data_counter) / (1024 * 1024 * 1024)).toFixed(2);
               const totalTraffic = (data.plan_monthly_data / (1024 * 1024 * 1024)).toFixed(2);
-              const resetDate = data.data_next_reset ? new Date(data.data_next_reset * 1000).toLocaleDateString() : '未知';
+              const resetDate = data.data_next_reset ? new Date(data.data_next_reset * 1000).toLocaleString('zh-CN', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false // 24小时制
+            }).replace(/\//g, '-').replace(',', '')  : '未知';
 
               const serverItem = document.createElement('div');
               serverItem.className = 'server-item';
